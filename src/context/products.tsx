@@ -1,6 +1,9 @@
 import React, { createContext, useEffect, useState } from "react";
+import { ProductContextType } from "../types";
 
-const ProductContext = createContext([]);
+export const ProductContext = createContext<ProductContextType>({
+  products: [],
+});
 
 type ProductProviderProps = {
   children: React.ReactNode;
@@ -16,6 +19,7 @@ export const ProductProvider = (props: ProductProviderProps) => {
   const fetchProdutcs = async () => {
     const response = await fetch("https://fakestoreapi.com/products");
     const data = await response.json();
+
     setProducts(data);
   };
 
@@ -25,7 +29,7 @@ export const ProductProvider = (props: ProductProviderProps) => {
 
   /** Render */
   return (
-    <ProductContext.Provider value={products}>
+    <ProductContext.Provider value={{ products }}>
       {children}
     </ProductContext.Provider>
   );

@@ -1,9 +1,39 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductContext } from "../../context";
+import { ProductContextType, ProductType } from "../../types";
 
 type HomeProps = {
   //
 };
 
 export const Home = (props: HomeProps) => {
-  return <div>Home</div>;
+  const { products } = useContext<ProductContextType>(ProductContext);
+
+  const filteredProducts = products.filter((product: ProductType) => {
+    return (
+      product.category === `men's clothing` ||
+      product.category === `women's clothing`
+    );
+  });
+
+  return (
+    <div>
+      <section className="py-16">
+        <div className="container mx-auto">
+          <div className="mx-auto grid max-w-sm grid-cols-1 gap-[30px] md:mx-0 md:max-w-none md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+            {filteredProducts.map((product: ProductType) => {
+              return (
+                <div
+                  key={product.id}
+                  className="mb-4 h-[300px] w-full bg-pink-200"
+                >
+                  {product.title}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 };
