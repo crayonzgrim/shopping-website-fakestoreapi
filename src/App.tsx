@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header } from "./components/organisms";
+import { Sidebar } from "./components/organisms/Sidebar";
 import { Home } from "./components/pages";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
+        <Sidebar />
       </Router>
     </div>
   );

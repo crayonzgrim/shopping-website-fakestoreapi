@@ -14,3 +14,9 @@ export interface ProductType {
 export interface ProductContextType {
   products: ProductType[];
 }
+
+export interface SidebarType {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  handleSidebarClose: () => void;
+}

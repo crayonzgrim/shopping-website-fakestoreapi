@@ -1,1 +1,2 @@
-export * from "./products";
+export * from "./ProductContext";
+export * from "./SidebarContext";
