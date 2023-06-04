@@ -1,6 +1,8 @@
 import React from "react";
-import WomanImg from "../../img/woman_hero.png";
+import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
+
+import WomanImg from "../../img/woman_hero.png";
 
 export const Hero = () => {
   return (
@@ -16,10 +18,13 @@ export const Hero = () => {
             <span className="font-semibold">WOMENS</span>
           </h1>
           <Link
-            to={"/"}
-            className="self-start border-b-2 border-primary font-semibold uppercase"
+            to={"/products"}
+            className="hover:transion-all align-center flex w-[250px] justify-start self-start bg-primary p-2 font-semibold uppercase text-white"
           >
-            Discover More
+            <p className="ml-1 mr-2 h-full">Go to shopping</p>
+            <p className="mt-1 w-[80px] transition-all hover:pl-12">
+              <BsArrowRight />
+            </p>
           </Link>
         </div>
         <div className="hidden lg:block">

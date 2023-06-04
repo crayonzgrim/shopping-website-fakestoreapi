@@ -53,13 +53,13 @@ export const Sidebar = () => {
           to={"/"}
           className="flex w-full items-center justify-center bg-gray-200 p-4 font-medium text-primary"
         >
-          View cart
+          View cart (준비 중)
         </Link>
         <Link
           to={"/"}
           className="flex w-full items-center justify-center bg-primary p-4 font-medium text-white"
         >
-          Checkout
+          Checkout (준비 중)
         </Link>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { ProductContextType } from "../types";
+import { fakeApi } from "../api";
 
 export const ProductContext = createContext<ProductContextType>({
   products: [],
@@ -17,7 +18,7 @@ export const ProductProvider = (props: ProductProviderProps) => {
 
   /** Function */
   const fetchProdutcs = async () => {
-    const response = await fetch("https://fakestoreapi.com/products");
+    const response = await fetch(fakeApi);
     const data = await response.json();
 
     setProducts(data);

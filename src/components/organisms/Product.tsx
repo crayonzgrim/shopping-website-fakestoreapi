@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { BsCartPlus } from "react-icons/bs";
 import { LuMaximize2 } from "react-icons/lu";
 import { ProductType } from "../../types";
 import { CartContext } from "../../context";

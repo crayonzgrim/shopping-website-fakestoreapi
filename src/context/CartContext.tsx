@@ -51,7 +51,6 @@ export const CartProvider = (props: CartProviderProps) => {
 
   const handleRemoveFromCart = useCallback(
     (id: number) => {
-      // (product: ProductType) => {
       const newCart = cart.filter((item) => {
         return item.id !== id;
       });
@@ -100,13 +99,10 @@ export const CartProvider = (props: CartProviderProps) => {
   );
 
   useEffect(() => {
-    if (cart.length > 0) {
-      const amount = cart.reduce((acc, cur) => {
-        return acc + cur.amount;
-      }, 0);
-
-      setTotalAmount(amount);
-    }
+    const amount = cart.reduce((acc, cur) => {
+      return acc + cur.amount;
+    }, 0);
+    setTotalAmount(amount);
 
     const total = cart.reduce((acc, cur) => {
       return acc + cur.price * cur.amount;

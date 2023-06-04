@@ -16,11 +16,17 @@ export const Header = (props: HeaderProps) => {
 
   const [isActive, setIsActive] = useState(false);
 
+  const handleScroll = () => {
+    window.scrollY > 90 ? setIsActive(true) : setIsActive(false);
+  };
+
   /** Function */
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
-    });
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   /** Render */
@@ -28,7 +34,7 @@ export const Header = (props: HeaderProps) => {
     <header
       className={`${
         isActive ? "bg-white py-4 shadow-md" : "bg-none py-6"
-      } fixed z-10 w-full transition-all`}
+      } fixed z-10 w-full transition-all lg:px-14 lg:py-4`}
     >
       <div className="container mx-auto flex h-full items-center justify-between">
         <Link to={"/"}>

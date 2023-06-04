@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Footer, Header, Sidebar } from "./components/organisms";
-import { Home, ProductDetail } from "./components/pages";
+import { Hero, Home, ProductDetail } from "./components/pages";
 
 function App() {
   return (
@@ -9,7 +9,8 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Hero />} />
+          <Route path="/products" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
         <Sidebar />
