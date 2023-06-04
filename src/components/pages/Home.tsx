@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { ProductContext } from "../../context";
 import { ProductContextType, ProductType } from "../../types";
 import { Product } from "../organisms";
+import { Hero } from "./Hero";
 
 type HomeProps = {
   //
@@ -19,6 +20,7 @@ export const Home = (props: HomeProps) => {
 
   return (
     <div>
+      <Hero />
       <section className="py-16">
         <div className="container mx-auto">
           <div className="mx-auto grid max-w-sm grid-cols-1 gap-[30px] md:mx-0 md:max-w-none md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
