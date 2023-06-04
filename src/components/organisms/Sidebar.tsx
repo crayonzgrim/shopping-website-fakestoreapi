@@ -9,7 +9,8 @@ import { Link } from "react-router-dom";
 export const Sidebar = () => {
   /** Property */
   const { isSidebarOpen, handleSidebarClose } = useContext(SidebarContext);
-  const { cart, handleClearAll, totalPrice } = useContext(CartContext);
+  const { cart, handleClearAll, totalPrice, totalAmount } =
+    useContext(CartContext);
 
   /** Function */
 
@@ -21,7 +22,9 @@ export const Sidebar = () => {
       } fixed top-0 z-10 h-full w-full bg-white px-4 shadow-2xl transition-all duration-300 md:w-[35vw] lg:px-[35px] xl:max-w-[30vw]`}
     >
       <div className="flex items-center justify-between border-b py-6">
-        <div className="text-sm font-semibold uppercase">Shopping Bag {0}</div>
+        <div className="text-sm font-semibold uppercase">
+          Shopping Bag ({totalAmount})
+        </div>
         <button
           onClick={handleSidebarClose}
           className="flex h-8 w-8 items-center justify-center"
