@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Header } from "./components/organisms";
-import { Sidebar } from "./components/organisms/Sidebar";
+import { Header, Sidebar } from "./components/organisms";
 import { Home } from "./components/pages";
 
 function App() {

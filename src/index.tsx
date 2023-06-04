@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ProductProvider, SidebarProvider } from "./context";
+import { CartProvider, ProductProvider, SidebarProvider } from "./context";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -11,9 +11,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <SidebarProvider>
-      <ProductProvider>
-        <App />
-      </ProductProvider>
+      <CartProvider>
+        <ProductProvider>
+          <App />
+        </ProductProvider>
+      </CartProvider>
     </SidebarProvider>
   </React.StrictMode>
 );
