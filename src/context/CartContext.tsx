@@ -25,6 +25,12 @@ export const CartProvider = (props: CartProviderProps) => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   /** Function */
+  ////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////
+  // Check-1 : 카트에 추가하는 로직입니다.
+  // 추가한 아이템의 id와 카트에 담긴 아이템의 id를 비교해서 같은 것이 있다면 amount를 하나씩 늘리게 됩니다.
+  ////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////
   const handleAddToCart = useCallback(
     (product: ProductType) => {
       const newProduct = { ...product, amount: 1 };
@@ -98,6 +104,15 @@ export const CartProvider = (props: CartProviderProps) => {
     [cart, handleRemoveFromCart]
   );
 
+  ////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////
+  // Check-2 : 카트에 넣은 상품의 전체 갯수와 전체 가격을 카운트합니다.
+  // - amount
+  //    - 상품의 amount를 초기값에 더해가는 방식으로 계산합니다.
+  // - total
+  //    - 상품의 가격과 갯수를 곱한 뒤 초기값에 계속 더해가는 방식으로 계산합니다.
+  ////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////
   useEffect(() => {
     const amount = cart.reduce((acc, cur) => {
       return acc + cur.amount;
